@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
+
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -16,5 +18,6 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
+
   "include": ["src"]
 }
