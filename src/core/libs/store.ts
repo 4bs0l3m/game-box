@@ -17,5 +17,8 @@ export class Store <T>{
     save(){
         localStorage.setItem(this.name,JSON.stringify(this.store));
     }
+    getSize(){
+        return this.store.size;
+    }
 
 }
