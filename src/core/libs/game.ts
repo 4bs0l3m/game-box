@@ -1,4 +1,5 @@
 import { Line } from "../objects/line";
+import { IObject } from "../types/IObject";
 
 export class Game {
     constructor(element: HTMLCanvasElement) {
@@ -6,7 +7,7 @@ export class Game {
       this.gameObjects=[];
     }
   private _canvas!: HTMLCanvasElement;
-  private gameObjects:Line[];
+  private gameObjects:IObject[];
   public get canvas(): HTMLCanvasElement {
     return this._canvas;
   }
@@ -25,18 +26,17 @@ export class Game {
     this._canvas = element;
     this._context = <CanvasRenderingContext2D>this.canvas.getContext("2d");
   }
-  addObjects(_paths:Line){
+  addObjects(_paths:IObject){
     this.gameObjects.push(_paths);
-    this._context.beginPath();
-    this.context.save();
+
   }
   update(){
     // console.log('this.gameObjects :', this.gameObjects);
     this._context.clearRect(0,0,this._canvas.width,this._canvas.height);
     this.gameObjects.forEach(item=>{
-      this._context.stroke(item.draw());
+      // setTimeout(0,1000)
+      item.draw(this._context);
+      
     })
-    this._context.beginPath();
-    this.context.save();
   }
 }
