@@ -1,8 +1,7 @@
 import { AngleEnum } from './core/enums/AngleEnum.enum';
 // import "style.css";
 
-import { Draw, Game, Vector2D } from "./core";
-import { Line } from "./core/objects/line";
+import {  Game } from "./core";
 
 const app = <HTMLCanvasElement>window.document.getElementById("app");
 
