@@ -1,4 +1,5 @@
-import {  Game } from "./core";
+import {  Game, Line } from "./core";
+
 
 const app = <HTMLCanvasElement>window.document.getElementById("app");
 
