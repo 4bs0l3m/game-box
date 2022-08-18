@@ -1,6 +1,3 @@
-import { AngleEnum } from './core/enums/AngleEnum.enum';
-// import "style.css";
-
 import {  Game } from "./core";
 
 const app = <HTMLCanvasElement>window.document.getElementById("app");
@@ -15,7 +12,6 @@ const rect = new Line("dd", { x: X, y: Y });
 
 let rectPath=rect
 .addPoint({x:0,y:50})
-// .addPoint({x:100,y:100})
 .addPoint({x:50,y:50})
 
 
@@ -24,12 +20,3 @@ game.addObjects(rectPath);
 
 game.update();
 
-// setInterval(() => {
-//         rectPath.rotate(0)
-//         game.update()
-//     }, 100);
-
-// game.context.rotate(50)
-// game.update();
-// rectPath.
-    
