@@ -1,5 +1,4 @@
 import { Vector2D } from "./../libs/vector2D";
-import { Game } from "../libs/game";
 import { Point } from "../types/point";
 import { Draw } from "../libs/draw";
 import { IObject } from "../types/IObject";
