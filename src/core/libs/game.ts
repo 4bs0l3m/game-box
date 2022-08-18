@@ -1,4 +1,3 @@
-import { Line } from "../objects/line";
 import { IObject } from "../types/IObject";
 
 export class Game {
