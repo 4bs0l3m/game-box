@@ -11,13 +11,23 @@ let X=50;
 let Y=50
 const rect = new Line("dd", { x: X, y: Y });
 
-let rectPath=rect
-.addPoint({x:0,y:50})
-.addPoint({x:50,y:50})
 
 
 
-game.addObjects(rectPath);
+game.addObjects(rect);
 
 game.update();
-
+app.addEventListener('mouseup',(event)=>{
+    console.log(event);
+    // rect.deleteLastPoint();
+    // game.update();
+    rect.addPoint({
+        x:event.offsetX-rect.initalPoint.x,
+        y:event.offsetY-rect.initalPoint.y
+    })
+    game.update();
+})
+// setInterval(()=>{
+//     rectPath.rotate(2);
+//     game.update()
+// },100)

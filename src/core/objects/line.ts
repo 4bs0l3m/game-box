@@ -33,6 +33,9 @@ export class Line implements IObject {
 
     return this;
   }
+  deleteLastPoint(){
+    this.points.slice(-1,1)
+  }
   getPoints() {
     return this.points;
   }
@@ -45,21 +48,20 @@ export class Line implements IObject {
     let initalX=this.initalPoint.x;
     let initalY=this.initalPoint.y;
     // this.drawer.moveTo(_point);
-    ctx.arc(initalX,initalY,5,0,360)
-    ctx.stroke();
+
     this.points.forEach((point) => {
       const _newPoint:Point={
         x:point.x+initalX,
         y:point.y+initalY
       }
-      console.log('initalY :', initalY);
-      console.log('_newPoint :', _newPoint);
+
       drawing.lineTo(_newPoint);
     });
-    
+    ctx.beginPath()
     ctx.stroke(drawing.getPath());
     ctx.translate(initalX,initalY)
     ctx.rotate(this.rotation);
      ctx.translate(-initalX,-initalY)
+     ctx.closePath()
   }
 }
